@@ -1,0 +1,77 @@
+user:{
+    "harsh-12345":{
+        name:"Harsh",
+        contact-list:{
+            "ayush-12345":"Ayush", 
+            "parth-12345":"Parth",
+        }
+    },
+    "ayush-12345":{
+        name:"Ayush",
+        contact-list:{
+            "harsh-12345":"Harsh",      
+        }
+    },
+    "parth-12345":{
+        name:"Parth",
+        contact-list:{
+            "harsh-12345":"Harsh",      
+        }
+    },
+}
+
+message:{
+    "harsh-12345"{
+        "ayush123":{
+            "message-id-123":{
+                message_text:"Hiiiii",
+                message_seen:true,
+                message_timeStamp:12.01,
+            },
+            "message-id-12333":{
+                message_text:"What are you doing?",
+                message_seen:true,
+                message_timeStamp:12.03,
+            },
+        }
+    },
+    "ayush-123":{
+        "harsh-12345":{
+            "message-id-231":{
+                message_text:"Hiiiii",
+                message_seen:true,
+                message_timeStamp:12.01,
+            },
+            "message-id-3456":{
+                message_text:"What are you doing?",
+                message_seen:true,
+                message_timeStamp:12.03,
+            },
+        }
+    }
+}
+
+
+--------------------------------------
+
+class User{
+    String userId;
+    String userName;
+    List<ContactUserMessage> listOfContact;
+}
+
+class ContactUserMessage{
+    String contactUserId;
+    Message Messages;
+}
+
+class Message{
+    String messageId;
+    String messageText;
+    bool isMessageSeen;
+    String messageTime;
+
+    Message.fromJson(Map<String,dynamic> message){
+        
+    }
+}
