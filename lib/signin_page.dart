@@ -58,6 +58,7 @@ class _SigninPageState extends State<SigninPage> {
                     ),
                     //
                     TextField(
+                      obscureText: true,
                       controller: passwordController,
                       decoration: InputDecoration(
                         labelText: "Enter Password",

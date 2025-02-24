@@ -21,6 +21,7 @@ class ChatappProvider extends ChangeNotifier {
     if (!listOfContactUser!.any((contact) => contact.emailId == key)) {
       ContactUser contactUser = ContactUser(emailId: key, userName: value);
       listOfContactUser!.add(contactUser);
+      print("message method call");
       messageRetrieve(emailId: emailId, receiverId: key);
     }
   });
@@ -63,7 +64,7 @@ class ChatappProvider extends ChangeNotifier {
             Map<String, dynamic>.from(data.snapshot.value as Map));
         Message message =
             Message(messageId: data.snapshot.key, messageData: messageData);
-        messageList[receiverId]!.add(message);
+        messageList[receiverId]?.add(message);
         print(messageList);
         print("ok");
         notifyListeners();

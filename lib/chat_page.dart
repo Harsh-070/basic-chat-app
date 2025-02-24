@@ -140,7 +140,7 @@ class ChatPage extends StatelessWidget {
                                             255, 83, 167, 236),
                                       ),
                                       child: Text(
-                                        message.messageData!.messageText!,
+                                        message.messageData!.messageText??"",
                                         style: TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.w500,
